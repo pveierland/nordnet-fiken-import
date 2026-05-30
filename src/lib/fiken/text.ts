@@ -12,7 +12,11 @@ export const getForklarendeTekst = (
       return `Salg av ${nordnetLine.verdipapir} (${nordnetLine.ISIN})`;
     case NordnetType.BYTTE_UTTAK_VP:
     case NordnetType.BYTTE_INNLEGG_VP:
+    case NordnetType.SPLITT_UTTAK_VP:
+    case NordnetType.SPLITT_INNLEGG_VP:
       return nordnetLine.transaksjonstekst;
+    case NordnetType.UTBYTTE:
+      return nordnetLine.verdipapir !== null ? `Utbytte ${nordnetLine.verdipapir} (${nordnetLine.ISIN})` : 'Utbytte';
     case NordnetType.DEBETRENTE:
       return 'Debetrente';
     case NordnetType.KREDITRENTE:

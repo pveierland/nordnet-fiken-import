@@ -22,6 +22,12 @@ export const getKonti = ({ transaksjonstype, portefølje, transaksjonstekst, bel
         return { fraKonto: portefølje, tilKonto: portefølje };
       case NordnetType.BYTTE_INNLEGG_VP:
         return { fraKonto: portefølje, tilKonto: portefølje };
+      case NordnetType.SPLITT_UTTAK_VP:
+        return { fraKonto: portefølje, tilKonto: portefølje };
+      case NordnetType.SPLITT_INNLEGG_VP:
+        return { fraKonto: portefølje, tilKonto: portefølje };
+      case NordnetType.UTBYTTE:
+        return { fraKonto: null, tilKonto: portefølje };
       case NordnetType.SALDO:
         return { fraKonto: portefølje, tilKonto: portefølje };
       case NordnetType.DEBETRENTE:
